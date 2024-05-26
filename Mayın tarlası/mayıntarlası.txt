@@ -1,0 +1,334 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <time.h>
+#include <windows.h>
+
+struct elmas 
+{
+  int satir;
+  int sutun;
+  int uzaklik;
+};
+
+int main(){
+system("COLOR C");
+int elmsayaci=0;
+int muhafizsayac=0;
+int kalanmuh=5;
+int bulunanelmas=0;
+int eksilencan=4;
+int SUTUN=10;
+int SATIR= 10;
+int ELMASSAYISI=5;
+int MUHAFIZSAYISI=5;
+int BASLANGICSATIRI =2;
+int BASLANGICSUTUNU =4;
+int CANIMIZ =3;
+
+srand(time(0));
+
+int satir = BASLANGICSATIRI;
+int sutun = BASLANGICSUTUNU;
+int can = CANIMIZ; 
+
+struct elmas elmas[ELMASSAYISI];
+{
+	for(int i = 0;i < 5 ;i++)
+	{
+	elmas[i].satir != 2;  
+	elmas[i].sutun != 4;
+	elmas[i].satir = rand() % 9;
+    elmas[i].sutun = rand() % 9;
+	}
+}
+
+int a,s,d,f,g,q,w,e,r,t,l;
+a = 1 + rand() % 3;
+e = 1 + rand() % 3;	
+s = 1 + rand() % 3;
+q = 1 + rand() % 3;
+d = 1 + rand() % 3;
+w = 1 + rand() % 3;
+f = 1 + rand() % 3;
+r = 1 + rand() % 3;
+g = 1 + rand() % 3;
+t = 1 + rand() % 3;
+l = 1 + rand() % 2;
+
+while (can > 0 && kalanmuh > 0 ){  
+	printf("    HAZINE AVCISI    \n");
+    if(elmsayaci= elmsayaci++)
+    {
+    	printf("Bir elmas buldun!\n");
+    	elmsayaci--;
+	}
+	if(muhafizsayac = muhafizsayac++)
+	{
+		printf("Muhafiza yakalandin!\n");
+		muhafizsayac--;
+	}
+	printf("Bulunan Elmas Sayisi: %d\n",bulunanelmas);
+    printf("Kalan Can : %d\n",can);
+    for (int i = 0; i < 10; i++) {
+    	for (int j = 0; j < 10; j++) 
+		{
+        	if (i == satir && j == sutun) {
+        	printf("A ");
+        	}   
+	  		else
+			{
+          	printf("0 ");
+        	}
+    	}
+      	printf("\n");
+    }
+    for (int i = 0; i <ELMASSAYISI; i++) 
+	{
+    elmas[i].uzaklik = abs(satir - elmas[i].satir) + abs(sutun - elmas[i].sutun);
+    	if(elmas[i].uzaklik>19)
+    	{
+    	printf("");
+		}
+		else{
+    	printf("%d. Elmasa olan uzakliginiz : %d\n", i+1, elmas[i].uzaklik);
+		}
+	}
+    printf("W/A/S/D yon tuslari ile hareket ediniz: ");
+    char hareketsaglayici;
+    scanf(" %c", &hareketsaglayici);
+    switch (hareketsaglayici) 
+	{
+     	case 'A':
+      	if(sutun<1)
+      	sutun == 1;
+      	else
+        sutun--;
+        break;
+    	case 'W':
+      	if(satir<1)
+      	satir == 1;
+      	else
+        satir--;
+        break;
+    	case 'S':
+      	if(satir>8)
+      	satir == 8;
+      	else
+    	satir++;
+        break;
+    	case 'D':
+      	if(sutun>8)
+      	sutun == 8;
+      	else
+        sutun++;
+        break;
+    	default:
+        printf("CAPSLOCK KAPALI YA DA FARKLI BIR KARAKTER GIRDINIZ.\n");
+        continue;
+    }
+	for (int i = 0; i < ELMASSAYISI; i++) 
+	{
+    	if (satir == elmas[i].satir && sutun == elmas[i].sutun) 
+		{
+    	elmas[i].satir = 20;
+    	elmas[i].sutun = 20;
+    	elmsayaci++;
+    	kalanmuh--;
+    	bulunanelmas++;
+    	}
+	}   		
+	if(q == 2)
+	{
+	q= q-3;
+	}
+	else if(q == 3)
+	{
+	q= q-3;
+	}
+	else if(a==3)
+	{
+	a=a-3;
+	}
+	else if(a ==2)
+	{
+	a= a-3;
+	}
+	else if(a == 1&& q==1)
+	{
+		if(l > 1)
+		{
+			a = 1;
+			q = 0;
+		}
+		else if(l < 2)
+		{
+			q = 1;
+			a = 0;
+		}
+	}
+	
+	if (satir == elmas[0].satir+q && sutun == elmas[0].sutun+a)
+	{
+    can--;
+    muhafizsayac++;
+    satir =2;
+    sutun =4;
+	}
+		
+	if(w==2)
+	{
+	w= w-3;
+	}	
+	else if(w==3)
+	{
+	w = w-3;
+	}
+	if(s==2)
+	{
+	s= s-3;
+	}
+	else if(s==3)
+	{
+	s= s-3;
+	}
+	else if(w == 1&& s==1)
+	{
+		if(l > 1)
+		{
+			w = 1;
+			s = 0;
+		}
+		else if(l < 2)
+		{
+			s = 1;
+			w = 0;
+		}
+	}
+	
+	if (satir == elmas[1].satir+w && sutun == elmas[1].sutun+s) 
+	{
+    can--;
+    muhafizsayac++;
+    satir =2;
+    sutun =4;
+	}
+	
+	if(e==2)
+	{
+	e= e-3;
+	}
+	else if(e==3)
+	{
+	e= q-3;
+	}
+	if(d==2)
+	{
+	d= d-3;
+	}
+	else if(d==3)
+	{
+	d= d-3;
+	}
+	else if(e == 1&& d==1)
+	{
+		if(l > 1)
+		{
+			e = 1;
+			d = 0;
+		}
+		else if(l < 2)
+		{
+			d = 1;
+			e = 0;
+		}
+	}	
+	
+	if (satir == elmas[2].satir+e && sutun == elmas[2].sutun+d) 
+	{
+    can--;
+    muhafizsayac++;
+    satir =2;
+    sutun =4;
+	}
+	
+	if(r==2)
+	{
+	r= r-3;
+	}
+	else if(r==3)
+	{	
+	r=r-3;
+	}
+	if(f==2)
+	{
+	f= f-3;
+	}
+	else if(f==3)
+	{
+	f=f-3;
+	}
+	else if(f == 1&& r==1)
+	{
+		if(l > 1)
+		{
+			f = 1;
+			r = 0;
+		}
+		else if(l < 2)
+		{
+			r = 1;
+			f = 0;
+		}	
+	}	
+	
+	if (satir == elmas[3].satir+r && sutun == elmas[3].sutun+f) 
+	{
+    can--;
+    muhafizsayac++;
+    satir =2;
+    sutun =4;
+	}
+
+	if(g==2)
+	{
+	g= g-3;
+	}
+	else if(g==3)
+	{
+	g= g-3;
+	}
+	if(t==2)
+	{
+	t= t-3;
+	}
+	else if(t==3)
+	{
+	t= t-3;
+	}
+	else if(t == 1&& g==1)
+	{	
+		if(l > 1)
+		{
+			t = 1;
+			g = 0;
+		}
+		else if(l < 2)
+		{
+			g = 1;
+			t = 0;
+		}
+	}	
+	
+	if (satir == elmas[4].satir+t && sutun == elmas[4].sutun+g) 
+	{
+    can--;
+    muhafizsayac++;
+    satir =2;
+    sutun =4;
+	}
+	system("CLS");
+}
+if(can<1)printf("Kaybettiniz :(");
+else if(kalanmuh<1)printf("Kazandiniz :)");
+return 0;                
+}
